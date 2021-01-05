@@ -1,0 +1,32 @@
+{
+  "name": "icejs-codemod",
+  "version": "0.1.0",
+  "description": "icjes codemod scripts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/icejs-codemod"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm run lint"
+    }
+  },
+  "scripts": { 
+    "lint": "npm run eslint && npm run prettier",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "prettier": "prettier **/* --write",
+    "jscodeshift": "jscodeshift"
+  },
+  "dependencies": {
+    "jscodeshift": "^0.11.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@iceworks/spec": "^1.1.0",
+    "eslint": "^7.17.0",
+    "husky": "^4.3.6",
+    "prettier": "^2.2.1"
+  }
+}
