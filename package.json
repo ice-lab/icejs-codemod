@@ -13,7 +13,7 @@
       "pre-push": "npm run lint"
     }
   },
-  "scripts": { 
+  "scripts": {
     "lint": "npm run eslint && npm run prettier",
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
     "prettier": "prettier **/* --write",
