@@ -49,8 +49,8 @@ module.exports = (fileInfo, api, options) => {
   if (basename === 'app.ts' || basename === 'app.js') {
     const root = jscodeshift(fileInfo.source);
     let hasModifications = false;
-    hasModifications = replaceCreateAppImport(jscodeshift, root) || hasModifications;
     hasModifications = replaceCreateAppReferences(jscodeshift, root) || hasModifications;
+    hasModifications = replaceCreateAppImport(jscodeshift, root) || hasModifications;
 
     return hasModifications ? root.toSource(printOptions) : null;
   }
