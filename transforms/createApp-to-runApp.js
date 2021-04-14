@@ -36,7 +36,7 @@ module.exports = (fileInfo, api, options) => {
         (path) =>
           path.node.name === localCreateAppName &&
           path.parent.node.type === 'CallExpression' &&
-          path.parent.parent.node.type === 'ExpressionStatementice' &&
+          path.parent.parent.node.type === 'ExpressionStatement' &&
           path.parent.parent.parent.node.type === 'Program',
       )
       .forEach((path) => {
